@@ -1,11 +1,9 @@
 package netology.ru;
 
 public class Radio {
-    public int currentStation;
+    private int currentStation;
 
-    public int getCurrentStation() {
-        return currentStation;
-    }
+    private int currentVolume;
 
     public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation < 0) {
@@ -15,6 +13,26 @@ public class Radio {
             return;
         }
         currentStation = newCurrentStation;
+    }
+
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume < 0) {
+            return;
+        }
+        if (newCurrentVolume > 100) {
+            return;
+        }
+        currentVolume = newCurrentVolume;
+
+    }
+
+    public int getCurrentStation() {
+        return currentStation;
+    }
+
+    public int getCurrentVolume() {
+
+        return currentVolume;
     }
 
     public void next() {
@@ -31,23 +49,6 @@ public class Radio {
         } else {
             currentStation = 9;
         }
-    }
-
-    public int currentVolume;
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 0) {
-            return;
-        }
-        if (newCurrentVolume > 100) {
-            return;
-        }
-        currentVolume = newCurrentVolume;
-
     }
 
     public void increaseVolume() {
