@@ -5,6 +5,24 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
 
+   @Test
+   public void ShouldHaveStationsNumberByDefault() {
+       Radio station = new Radio();
+
+       Assertions.assertEquals(0, station.getMinStation());
+       Assertions.assertEquals(9, station.getMaxStation());
+       Assertions.assertEquals(0, station.getCurrentStation());
+   }
+
+    @Test
+    public void ShouldHaveStationsNumberSet() {
+        Radio station = new Radio(4);
+
+        Assertions.assertEquals(0, station.getMinStation());
+        Assertions.assertEquals(4, station.getMaxStation());
+        Assertions.assertEquals(0, station.getCurrentStation());
+    }
+
     @Test
     public void shouldSetStation() {
         Radio station = new Radio();
